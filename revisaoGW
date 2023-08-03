@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escolha</title>
+</head>
+<body>
+    <h1>Escolha o primeiro personagem</h1>
+    <input type = "radio" name="escolha1" value="Naruto">Naruto
+    <br>
+    <input type = "radio" name="escolha1" value="OnePiece">Luffy
+    <br>
+    <input type = "radio" name="escolha1" value="Hxh">Gon
+    <hr>
+    <h1>Escolha o segundo personagem</h1>
+    <input type = "radio" name="escolha2" value="Naruto">Sasuke
+    <br>
+    <input type = "radio" name="escolha2" value="OnePiece">Zoro
+    <br>
+    <input type = "radio" name="escolha2" value="Hxh">Killua
+    <hr>
+    <h1>Escolha o terceiro personagem</h1>
+    <input type = "radio" name="escolha3" value="Naruto">Sakura
+    <br>
+    <input type = "radio" name="escolha3" value="OnePiece">Nami
+    <br>
+    <input type = "radio" name="escolha3" value="Hxh">Netero
+    <hr>
+
+    <input type="button" id="btn" value="Enviar">
+    <h1 id="msg">Mensagem</h1>
+
+    <script>
+        document.getElementById("btn").onclick = function() {
+            var escolha1 = document.getElementsByName("escolha1");
+            var escolha2 = document.getElementsByName("escolha2");
+            var escolha3 = document.getElementsByName("escolha3");
+            var contadorNaruto = 0;
+            var contadorOnePiece = 0;
+            var contadorHxh = 0;
+
+            for(var i=0; i<escolha1.length; i++){
+                if(escolha1[i].checked) {
+                    if(escolha1[i].value === "Naruto") {
+                        contadorNaruto += 1;
+                    } else 
+                    if(escolha1[i].value === "Hxh") {
+                        contadorHxh += 1;
+                    } 
+                    
+                    else {
+                        contadorOnePiece += 1; 
+                    }
+                }
+            }
+
+            for(var i=0; i<escolha2.length; i++){
+                if(escolha2[i].checked) {
+                    if(escolha2[i].value === "Naruto") {
+                        contadorNaruto += 1;
+                    }else
+                    if(escolha2[i].value === "Hxh") {
+                        contadorHxh += 1;
+                    } 
+                    
+                    else {
+                        contadorOnePiece += 1; 
+                    }
+                }
+            }
+
+            for(var i=0; i<escolha3.length; i++){
+                if(escolha3[i].checked) {
+                    if(escolha3[i].value === "Naruto") {
+                        contadorNaruto += 1;
+                    }else
+                    if(escolha3[i].value === "Hxh") {
+                        contadorHxh += 1;
+                    }
+                    
+                    else {
+                        contadorOnePiece += 1; 
+                    }
+                }
+            }
+            document.getElementById("msg").innerHTML  = "Naruto: " + contadorNaruto + " " + "One Piece: " + contadorOnePiece +  "Hunter x Hunter: " + contadorHxh;
+        }
+
+    </script>
+    
+</body>
+</html>
